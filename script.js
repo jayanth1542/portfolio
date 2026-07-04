@@ -1,64 +1,84 @@
-// ---------- Load skills from skills.json ----------
+// ---------- Load skills, grouped by category, from skills.json ----------
 fetch('skills.json')
   .then(res => res.json())
   .then(data => {
-    const grid = document.getElementById('skills-grid');
-    grid.innerHTML = data.skills.map(skill => `
-      <div class="skill-card">
-        <span class="skill-tag">${skill.tag}</span>
-        <p class="skill-name">${skill.name}</p>
+    const container = document.getElementById('skills-schedules');
+
+    // Group skills by category, preserving first-seen order
+    const groups = {};
+    const order = [];
+    data.skills.forEach(skill => {
+      const cat = skill.category || 'Other';
+      if (!groups[cat]) { groups[cat] = []; order.push(cat); }
+      groups[cat].push(skill);
+    });
+
+    container.innerHTML = order.map(cat => `
+      <div class="schedule-group">
+        <p class="schedule-heading">SCHEDULE — ${cat.toUpperCase()}</p>
+        <table class="schedule-table">
+          ${groups[cat].map(s => `
+            <tr>
+              <td>${s.name}</td>
+              <td class="spec-cell">${s.tag || ''}</td>
+            </tr>
+          `).join('')}
+        </table>
       </div>
     `).join('');
   })
   .catch(() => {
-    document.getElementById('skills-grid').innerHTML =
+    document.getElementById('skills-schedules').innerHTML =
       '<p style="color:var(--text-secondary)">Could not load skills.json</p>';
   });
 
-// ---------- Load projects from projects.json ----------
+// ---------- Load projects as a numbered project log ----------
 fetch('projects.json')
   .then(res => res.json())
   .then(data => {
-    const list = document.getElementById('projects-list');
-    list.innerHTML = data.projects.map(p => `
-      <article class="project-card">
-        <div class="project-head">
-          <h3 class="project-name">${p.name}</h3>
-          <span class="status-badge status-${p.status}">${p.status}</span>
-        </div>
-        <p class="project-desc">${p.description}</p>
-        <div class="stack-tags">
-          ${p.stack.map(s => `<span class="stack-tag">${s}</span>`).join('')}
-        </div>
-        <div class="project-links">
-          ${p.github ? `<a href="${p.github}" target="_blank" rel="noopener">Code ↗</a>` : ''}
-          ${p.demo ? `<a href="${p.demo}" target="_blank" rel="noopener">Live ↗</a>` : ''}
+    const log = document.getElementById('project-log');
+    log.innerHTML = data.projects.map((p, i) => `
+      <article class="log-entry">
+        <span class="log-no">P-${String(i + 1).padStart(2, '0')}</span>
+        <div>
+          <div class="log-head">
+            <h3 class="log-title">${p.name}</h3>
+            <span class="log-status status-${p.status}">${p.status}</span>
+          </div>
+          <p class="log-desc">${p.description}</p>
+          <div class="log-stack">
+            ${p.stack.map(s => `<span>${s}</span>`).join('')}
+          </div>
+          <div class="log-links">
+            ${p.github ? `<a href="${p.github}" target="_blank" rel="noopener">CODE ↗</a>` : ''}
+            ${p.demo ? `<a href="${p.demo}" target="_blank" rel="noopener">LIVE ↗</a>` : ''}
+          </div>
         </div>
       </article>
     `).join('');
   })
   .catch(() => {
-    document.getElementById('projects-list').innerHTML =
+    document.getElementById('project-log').innerHTML =
       '<p style="color:var(--text-secondary)">Could not load projects.json</p>';
   });
 
-// ---------- Pipeline bar: highlight active stage on scroll ----------
-const stages = document.querySelectorAll('.stage');
-const sections = document.querySelectorAll('main .section');
+// ---------- Sheet index: highlight active sheet on scroll ----------
+const links = document.querySelectorAll('.sheet-link');
+const sheets = document.querySelectorAll('main .sheet');
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       const id = entry.target.getAttribute('id');
-      stages.forEach(stage => {
-        stage.classList.toggle('active', stage.dataset.stage === id);
+      links.forEach(link => {
+        link.classList.toggle('active', link.dataset.sheet === id);
       });
     }
   });
 }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
 
-sections.forEach(section => observer.observe(section));
+sheets.forEach(sheet => observer.observe(sheet));
 
-// ---------- Footer deploy date ----------
-document.getElementById('deploy-date').textContent =
+// ---------- Title block print date ----------
+document.getElementById('print-date').textContent =
   new Date().toISOString().split('T')[0];
