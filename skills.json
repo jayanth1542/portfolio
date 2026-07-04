@@ -1,0 +1,15 @@
+{
+  "skills": [
+    { "name": "AWS (EC2, VPC, ALB, CloudWatch)", "category": "Cloud", "tag": "cloud:aws" },
+    { "name": "Jenkins", "category": "DevOps", "tag": "devops:jenkins" },
+    { "name": "Docker", "category": "DevOps", "tag": "devops:docker" },
+    { "name": "Kubernetes", "category": "DevOps", "tag": "devops:k8s" },
+    { "name": "Ansible", "category": "DevOps", "tag": "devops:ansible" },
+    { "name": "Linux / Bash", "category": "DevOps", "tag": "devops:linux" },
+    { "name": "Python", "category": "Languages", "tag": "lang:python" },
+    { "name": "JavaScript / Node.js", "category": "Languages", "tag": "lang:node" },
+    { "name": "Swift / UIKit", "category": "Languages", "tag": "lang:swift" },
+    { "name": "Attack Surface Mapping", "category": "Security", "tag": "sec:recon" },
+    { "name": "TryHackMe – Security Engineer Path", "category": "Security", "tag": "sec:tryhackme" }
+  ]
+}

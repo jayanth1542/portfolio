@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jayanth Somala — Cloud &amp; DevOps Engineer</title>
+<meta name="description" content="Portfolio of Jayanth Somala — Cloud and DevOps engineer specializing in CI/CD, containerization, and AWS infrastructure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Pipeline stage bar: the signature element. Stages light up as you scroll. -->
+<nav class="pipeline-bar" aria-label="Page sections as pipeline stages">
+  <div class="pipeline-track">
+    <a href="#source" class="stage" data-stage="source"><span class="stage-dot"></span>SOURCE</a>
+    <a href="#build" class="stage" data-stage="build"><span class="stage-dot"></span>BUILD</a>
+    <a href="#test" class="stage" data-stage="test"><span class="stage-dot"></span>TEST</a>
+    <a href="#deploy" class="stage" data-stage="deploy"><span class="stage-dot"></span>DEPLOY</a>
+    <a href="#live" class="stage" data-stage="live"><span class="stage-dot"></span>LIVE</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- SOURCE: hero + about -->
+  <section id="source" class="section hero">
+    <div class="terminal-window" role="img" aria-label="Terminal showing a whoami command">
+      <div class="terminal-titlebar">
+        <span class="dot red"></span><span class="dot amber"></span><span class="dot green"></span>
+        <span class="terminal-path">jay@portfolio:~</span>
+      </div>
+      <div class="terminal-body">
+        <p class="term-line"><span class="prompt">$</span> whoami</p>
+        <h1 class="term-output" id="typed-name">Jayanth Somala</h1>
+        <p class="term-line term-sub">Cloud &amp; DevOps Engineer · B.Tech CSE, Jain University '27</p>
+        <p class="term-line"><span class="prompt">$</span> status</p>
+        <p class="term-status"><span class="pulse-dot"></span> deployed &amp; open to internships / placements</p>
+      </div>
+    </div>
+
+    <div class="about-block">
+      <p class="eyebrow">source // about</p>
+      <p class="about-text">
+        I'm a Computer Science student focused on cloud infrastructure and DevOps automation —
+        the kind of work that sits between writing code and keeping it running reliably.
+        Most of what's here started as a "let me see if this actually works" project:
+        wiring Jenkins to Docker, debugging SSH auth between machines at 1am, or mapping out
+        a VPC by hand before ever touching Terraform. I like systems I can trace end to end.
+      </p>
+      <a class="resume-btn" href="resume.pdf" download>
+        <span class="resume-icon">⬇</span> Download résumé <span class="resume-tag">résumé-latest.pdf</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- BUILD: skills, rendered as container images -->
+  <section id="build" class="section">
+    <p class="eyebrow">build // skills</p>
+    <h2 class="section-title">Images in the registry</h2>
+    <div id="skills-grid" class="skills-grid" aria-live="polite">
+      <!-- populated by script.js from skills.json -->
+    </div>
+  </section>
+
+  <!-- TEST: projects, rendered as build logs -->
+  <section id="test" class="section">
+    <p class="eyebrow">test // projects</p>
+    <h2 class="section-title">Build logs</h2>
+    <div id="projects-list" class="projects-list">
+      <!-- populated by script.js from projects.json -->
+    </div>
+  </section>
+
+  <!-- DEPLOY: how this site itself ships -->
+  <section id="deploy" class="section deploy-section">
+    <p class="eyebrow">deploy // pipeline</p>
+    <h2 class="section-title">How this site ships</h2>
+    <ol class="deploy-steps">
+      <li><span class="step-tag">01</span> Skills &amp; projects live in <code>skills.json</code> / <code>projects.json</code> — edit and commit, no rebuild needed.</li>
+      <li><span class="step-tag">02</span> Hosted as a static site on GitHub Pages — free, no server to maintain.</li>
+      <li><span class="step-tag">03</span> Jenkins can push straight to the <code>gh-pages</code> branch on every commit, same pattern as the resume-site pipeline above.</li>
+    </ol>
+  </section>
+
+  <!-- LIVE: contact -->
+  <section id="live" class="section live-section">
+    <p class="eyebrow">live // contact</p>
+    <h2 class="section-title">Reach out</h2>
+    <div class="contact-links">
+      <a href="https://github.com/jayanth1542" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="https://www.linkedin.com/in/jayanth-somala-b7661b330" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span class="pulse-dot"></span> build passing · last deployed <span id="deploy-date"></span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
