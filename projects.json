@@ -9,28 +9,12 @@
       "demo": ""
     },
     {
-      "name": "Phantom Surface",
-      "status": "ARCHIVED",
-      "stack": ["Python", "Reconnaissance", "Security"],
-      "description": "Automated attack surface mapping tool built for academic research, with false-positive benchmarking used to evaluate detection accuracy.",
-      "github": "https://github.com/jayanth1542",
-      "demo": ""
-    },
-    {
-      "name": "Family Photo Sharing App",
-      "status": "LIVE",
-      "stack": ["Node.js", "Express", "Session Auth"],
-      "description": "A private photo-sharing web app for family use, with local filesystem storage, session-based authentication, and a configurable settings file for easy redeployment.",
-      "github": "https://github.com/jayanth1542",
-      "demo": ""
-    },
-    {
       "name": "Scalable AWS Infrastructure",
       "status": "BUILDING",
       "stack": ["AWS", "VPC", "EC2", "ALB", "CloudWatch"],
       "description": "A console-guided reference build of a scalable VPC, EC2 fleet, Application Load Balancer, and CloudWatch monitoring setup, documented as a step-by-step portfolio guide.",
       "github": "https://github.com/jayanth1542",
-      "demo": ""
+      "demo": "https://github.com/jayanth1542/Scalable-AWS-Cloud-Architecture/tree/main"
     }
   ]
 }
