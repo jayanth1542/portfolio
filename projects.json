@@ -1,12 +1,12 @@
 {
   "projects": [
     {
-      "name": "CI/CD Pipeline for a Self-Hosted Resume Site",
+      "name": "CI/CD Pipeline for Jenkins, Ansible & Docker",
       "status": "LIVE",
-      "stack": ["Jenkins", "Docker", "Nginx", "Ubuntu VM"],
-      "description": "An interactive resume site built as a single-page app, containerized with Docker, and shipped through a Jenkins pipeline that builds the image, pushes it to Docker Hub, and deploys it to Nginx on a self-hosted VM. Kubernetes rollout is the next stage in progress.",
+      "stack": ["Jenkins", "Docker", "Ansible", "Ubuntu VM","Node"],
+      "description": "Built an end-to-end CI/CD pipeline on a self-managed Ubuntu VM: Jenkins builds a Docker image and pushes it to Docker Hub on every commit Configured Ansible for automated deployment and SSH-key-based authentication between the Jenkins controller and  target hosts..",
       "github": "https://github.com/jayanth1542",
-      "demo": ""
+      "demo": "https://github.com/jayanth1542/hello-cicd"
     },
     {
       "name": "Scalable AWS Infrastructure",
