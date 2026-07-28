@@ -10,7 +10,7 @@
     },
     {
       "name": "Scalable AWS Infrastructure",
-      "status": "BUILDING",
+      "status": "LIVE",
       "stack": ["AWS", "VPC", "EC2", "ALB", "CloudWatch"],
       "description": "A console-guided reference build of a scalable VPC, EC2 fleet, Application Load Balancer, and CloudWatch monitoring setup, documented as a step-by-step portfolio guide.",
       "github": "https://github.com/jayanth1542",
