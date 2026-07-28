@@ -3,8 +3,8 @@
     {
       "name": "CI/CD Pipeline for Jenkins, Ansible & Docker",
       "status": "LIVE",
-      "stack": ["Jenkins", "Docker", "Ansible", "Ubuntu VM","Node"],
-      "description": "Built an end-to-end CI/CD pipeline on a self-managed Ubuntu VM: Jenkins builds a Docker image and pushes it to Docker Hub on every commit Configured Ansible for automated deployment and SSH-key-based authentication between the Jenkins controller and  target hosts..",
+      "stack": ["Jenkins", "Docker", "Ansible", "Ubuntu VM", "Node"],
+      "description": "Built an end-to-end CI/CD pipeline on a self-managed Ubuntu VM: Jenkins builds a Docker image and pushes it to Docker Hub on every commit. Configured Ansible for automated deployment and SSH-key-based authentication between the Jenkins controller and target hosts.",
       "github": "https://github.com/jayanth1542",
       "demo": "https://github.com/jayanth1542/hello-cicd"
     },
@@ -15,15 +15,14 @@
       "description": "A console-guided reference build of a scalable VPC, EC2 fleet, Application Load Balancer, and CloudWatch monitoring setup, documented as a step-by-step portfolio guide.",
       "github": "https://github.com/jayanth1542",
       "demo": "https://github.com/jayanth1542/Scalable-AWS-Cloud-Architecture/tree/main"
-    }
+    },
     {
       "name": "Dockerized-React-Application",
       "status": "LIVE",
       "stack": ["DOCKER", "NGINX", "DOCKER COMPOSE", "REACT"],
-      "description": "Containerized a React.js app with Docker and used Docker Compose to orchestrate it alongside an Nginx reverse proxy,simplifying multi-container deployment.",
+      "description": "Containerized a React.js app with Docker and used Docker Compose to orchestrate it alongside an Nginx reverse proxy, simplifying multi-container deployment.",
       "github": "https://github.com/jayanth1542/Dockerized-React-Application",
       "demo": "https://github.com/jayanth1542/Dockerized-React-Application"
     }
-    
   ]
 }
