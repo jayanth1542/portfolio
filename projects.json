@@ -16,5 +16,14 @@
       "github": "https://github.com/jayanth1542",
       "demo": "https://github.com/jayanth1542/Scalable-AWS-Cloud-Architecture/tree/main"
     }
+    {
+      "name": "Dockerized-React-Application",
+      "status": "LIVE",
+      "stack": ["DOCKER", "NGINX", "DOCKER COMPOSE", "REACT"],
+      "description": "Containerized a React.js app with Docker and used Docker Compose to orchestrate it alongside an Nginx reverse proxy,simplifying multi-container deployment.",
+      "github": "https://github.com/jayanth1542/Dockerized-React-Application",
+      "demo": "https://github.com/jayanth1542/Dockerized-React-Application"
+    }
+    
   ]
 }
